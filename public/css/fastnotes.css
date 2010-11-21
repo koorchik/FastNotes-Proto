@@ -1,0 +1,66 @@
+.fnnotes{
+    font-size: 0.8em;
+}
+.fninput {
+    width: 735px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+.fnimportant{
+    font-weight: bold;
+}
+.fnlist {
+    margin-top:5px;
+    height: 465px;
+    width:765px;
+    position:absolute;
+    overflow: auto;
+}
+.fnrow {
+    cursor:pointer
+}
+
+.fnrowinput {
+    width: 698px;
+}
+
+
+.green_msg {
+        color:green;
+        font-weight:bold;
+}
+.red_msg {
+        color:red;
+        font-weight:bold;
+}
+
+
+body {
+    background-color: #B2DFDA;
+}
+
+.fieldname {
+    font-weight: bold;
+    padding: 6px;
+    color: #4C3000;
+}
+
+.fieldset {
+	padding: 20px;
+    background-color: #FEDC69; 
+    border: 1px solid #D19405;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.fieldset_light {
+    padding: 20px;
+    background-color: #FEEEBD;
+    border: 1px solid #D19405;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.form input {
+    padding: 3px;
+}

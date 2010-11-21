@@ -1,0 +1,49 @@
+% layout 'default';
+
+
+<center>
+<br />
+
+<h1 class='fieldname fieldset_light' style='width:700px'>Frequently Asked Questions</h1>
+<br />
+
+<div  class='fieldset_light' style='width:600px; text-align:left; font-size: 1em' >
+    <dl>
+        <dt><strong>How can I add a new note? </strong></dt>
+        <dd>Type any text into the input field and the press enter key.</dd>
+        
+        <dt><strong>How can I add a high priority note?</strong></dt>
+        <dd>Start the note text with "!" sign.</dd>
+        
+        <dt><strong> How can I add a "todo" note? </strong></dt>
+        <dd>Start the note text with ":" sign.</dd>
+        
+        <dt><strong> Can I add a "high priority todo" note? </strong></dt>
+        <dd>Yes. Just start the note text with "!:" or ":!".</dd>
+        
+        <dt><strong> I want to edit my note. How can I do this?</strong></dt>
+        <dd>Double click on the note activates the editing mode. After editing press the enter key for saving.</dd>
+        
+        <dt><strong>How do I search notes ? </strong></dt>
+        <dd>
+            Type "/search words" into the input field and the press enter key. 
+            You can use "*" sign in search. It means any quantity of symbols. To find "Buy fruits for dinner" just type "/Buy*dinner"
+        </dd>
+        
+        <dt><strong>How to search notes by date? </strong></dt>
+        <dd>Every note text begins with a date stamp. Enter the date you are looking for preceded by "/". </dd>
+        
+        <dt><strong>Can I access my notes without a web-browser?</strong></dt>
+        <dd>
+            Yes. You can use your favourite IM client for managing your notes.
+            You should have Jabber or GoogleTalk account. Then just add 'simple-notes@jabber.ru' to your contact list.
+            Send any messages to 'simple-notes@jabber.ru' and it will be saved as a note. 
+            The search works the same as in a web-browser - start a message with "/" sign.
+        </dd>
+    
+    </dl>
+</div>
+
+
+
+</center>

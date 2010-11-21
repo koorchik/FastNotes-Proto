@@ -1,0 +1,7 @@
+<span class='red_msg' >
+    <%= flash 'error' %>
+</span>
+
+<span class='green_msg' >
+    <%= flash 'notice'%>
+</span>

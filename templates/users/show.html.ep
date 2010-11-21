@@ -1,0 +1,21 @@
+% layout 'default';
+
+<script type="text/javascript">
+    $("document").ready(function() {
+        $('.menubutton').button();
+        $('#notepad_button').click(function() {
+            $('#main_notepad').fastnotes();
+        });
+        
+    });
+</script>
+
+<center>
+    <span class='fieldname'> Welcome, <%= session 'login' %> !</span> <br />
+</center>
+
+<div id="main_notepad"></div>
+
+
+<a class='menubutton' id='notepad_button'>Show Notes</a> <br /><br />
+<a class='menubutton' id='notepad_button' href='<%= url_for "auths_delete" %>'>Logout</a>

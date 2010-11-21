@@ -1,0 +1,85 @@
+% layout 'default';
+
+
+<script type="text/javascript">
+    $("document").ready(function() {
+        $('.menubutton').button();
+        
+    });
+</script>
+
+
+<center>
+<br /><br /><br />
+
+<h1 class='fieldname fieldset' style='width:700px'>Simple Notes</h1>
+<br /><br />
+
+<form method='POST' action="<%= url_for 'users_create' %>" >
+<%= include 'msg' %> <br /><br />
+
+<div class='fieldset' style='width:400px'>
+    <table class='form'>
+        <tr>
+            <td class='fieldname'>
+                Login:
+            </td>
+            
+            <td >
+                <input type='text' name='login' value="<%= flash 'login' %>" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td class='fieldname'>
+                Email:
+            </td>
+            
+            <td >
+                <input type='text' name='email' value="<%= flash 'email' %>" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td class='fieldname'>
+                Password:          
+            </td>
+    
+            <td >
+                <input type='password' name='password'/>          
+            </td>
+        </tr>
+        
+        <tr>
+            <td class='fieldname'>
+                Repeat Password:          
+            </td>
+    
+            <td >
+                <input type='password' name='password2'/>          
+            </td>
+        </tr>
+
+        <tr>
+            <td >
+                
+            </td>
+    
+            <td style='padding-top:7px;'>
+                <input class='menubutton' type='submit' value='Register'/>          
+            </td>
+        </tr>
+        
+    </table>
+
+    
+</div>
+
+</form>
+
+<br /><br />
+
+<a class='fieldname' href='<%= url_for "auths_create_form" %>' >Back to Login</a>
+
+
+</center>
