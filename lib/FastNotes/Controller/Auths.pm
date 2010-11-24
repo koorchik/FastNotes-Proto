@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use v5.10;
 
-use Captcha::reCAPTCHA;
 use base 'Mojolicious::Controller';
 
 
