@@ -11,7 +11,7 @@ sub startup {
 
     $self->secret('SomethingVerySecret');
     $self->mode('development');
-    $self->session->default_expiration(3600*24*7);
+    $self->sessions->default_expiration(3600*24*7);
 
     my $config = $self->plugin('json_config');
 

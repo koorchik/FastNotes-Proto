@@ -1,2 +1,9 @@
 A sample project written in Mojolicious (not Lite). 
-See koorchik's blog http://koorchik.blogspot.com (in Russian)
+See koorchik's blog  http://koorchik.blogspot.com/2010/11/mojolicious-lite.html (in Russian)
+
+INSTALLATION
+1. Install last version of Mojolicious (from GitHub)
+2. Install DBIx::Simple and SQL::Abstract
+3. git clone git://github.com/koorchik/FastNotes-Proto.git fastnotes
+4. perl fastnotes/script/fastnotes.pl daemon
+
