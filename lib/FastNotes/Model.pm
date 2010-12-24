@@ -28,7 +28,6 @@ sub init {
             } )  or die DBIx::Simple->error;
         $DB->abstract = SQL::Abstract->new(
                case          => 'lower',
-               cmp           => 'like',
                logic         => 'and',
                convert       => 'upper'
         );
