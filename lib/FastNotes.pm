@@ -2,7 +2,9 @@ package FastNotes;
 
 use strict;
 use warnings;
-use base 'Mojolicious';
+use Mojo::Base 'Mojolicious';
+use FastNotes::Model;
+
 
 
 # This method will run once at server start
@@ -13,7 +15,7 @@ sub startup {
     $self->mode('development');
     $self->sessions->default_expiration(3600*24*7);
 
-    my $config = $self->plugin( 'json_config' => { file=>'fastnotes.json' } );
+    my $config = $self->plugin( 'JSONConfig' => { file=>'fastnotes.json' } );
 
     my $r = $self->routes;
     $r->namespace('FastNotes::Controller');
@@ -33,8 +35,7 @@ sub startup {
 
     $r->route('/help')   ->to( cb => sub{ shift->render( template=>'help', format=>'html' ) } );
 
-    # Load and init Model
-    Mojo::Loader->load('FastNotes::Model');
+    # Init Model
     FastNotes::Model->init( $config->{db} || {
         dsn      => 'dbi:SQLite:dbname=' . $self->home->rel_dir('storage') . '/fastnotes.db',
         user     => '',
