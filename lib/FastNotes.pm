@@ -18,7 +18,7 @@ sub startup {
     my $config = $self->plugin( 'JSONConfig' => { file=>'fastnotes.json' } );
 
     my $r = $self->routes;
-    $r->namespace('FastNotes::Controller');
+    $r->namespaces(['FastNotes::Controller']);
 
     $r->route('/')                   ->to('auths#create_form')->name('auths_create_form');
     $r->route('/login')              ->to('auths#create')     ->name('auths_create');
