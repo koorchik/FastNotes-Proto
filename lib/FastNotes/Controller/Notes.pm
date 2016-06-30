@@ -12,7 +12,7 @@ sub index {
         user_id => $self->session('user_id')
     } )->hashes;
 
-    $self->render_json($notes);
+    $self->render(json => $notes);
 }
 
 sub create {
@@ -24,9 +24,9 @@ sub create {
         date    => time()
     });
 
-    $self->render_json(
-        scalar FastNotes::Model::Note->select( { note_id => $note_id } )->hash,
-        status=>201
+    $self->render(
+        json   => scalar FastNotes::Model::Note->select( { note_id => $note_id } )->hash,
+        status => 201
     );
 }
 
@@ -39,7 +39,7 @@ sub update {
 
     FastNotes::Model::Note->update( $self->req->json , \%where);
 
-    $self->render_json(FastNotes::Model::Note->select(\%where)->hash);
+    $self->render(json => FastNotes::Model::Note->select(\%where)->hash );
 }
 
 sub delete {
@@ -50,7 +50,7 @@ sub delete {
         note_id => $self->param('id')
     } );
 
-    $self->render_json(1);
+    $self->render(json => 1);
 }
 
 1;

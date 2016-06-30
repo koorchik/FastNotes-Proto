@@ -3,7 +3,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
   PREREQ_PM => {
-      'Mojolicious'   => 3.97,
+      'Mojolicious'   => 0,
       'DBIx::Simple'  => 0,
       'SQL::Abstract' => 0,
       'DBD::SQLite'   => 0,

@@ -6,13 +6,8 @@ use DBIx::Simple;
 use SQL::Abstract;
 use Carp qw/croak/;
 
-use Mojo::Loader;
-
-# Reloadable Model
-my $modules = Mojo::Loader->search('FastNotes::Model');
-for my $module (@$modules) {
-    Mojo::Loader->load($module)
-}
+use FastNotes::Model::User;
+use FastNotes::Model::Note;
 
 my $DB;
 
@@ -26,13 +21,14 @@ sub init {
                  RaiseError     => 1,
                  sqlite_unicode => 1,
             } )  or die DBIx::Simple->error;
+
         $DB->abstract = SQL::Abstract->new(
                case          => 'lower',
                logic         => 'and',
                convert       => 'upper'
         );
 
-        unless ( eval {$DB->select('users')} ) { # TODO make better check 
+        unless ( eval {$DB->select('users')} ) { # TODO make better check
             $class->create_db_structure();
         }
     }
@@ -47,7 +43,7 @@ sub db {
 
 sub create_db_structure {
     my $class = shift;
-    
+
     $class->db->query(
             'CREATE TABLE users (user_id  INTEGER NOT NULL PRIMARY KEY ASC AUTOINCREMENT,
                                       login    TEXT    NOT NULL UNIQUE,
@@ -76,4 +72,3 @@ sub create_db_structure {
 }
 
 1;
-

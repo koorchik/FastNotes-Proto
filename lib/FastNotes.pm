@@ -11,7 +11,7 @@ use FastNotes::Model;
 sub startup {
     my $self = shift;
 
-    $self->secret('SomethingVerySecret');
+    $self->secrets(['SomethingVerySecret']);
     $self->mode('development');
     $self->sessions->default_expiration(3600*24*7);
 
@@ -27,7 +27,7 @@ sub startup {
     $r->route('/signup')->via('post')->to('users#create')     ->name('users_create');
     $r->route('/main')  ->via('get') ->to('users#show')       ->name('users_show');
 
-    my $rn = $r->bridge('/notes')->to('auths#check');
+    my $rn = $r->under('/notes')->to('auths#check');
     $rn->route                       ->via('get')   ->to('notes#index') ->name('notes_show');
     $rn->route                       ->via('post')  ->to('notes#create')->name('notes_create');
     $rn->route('/:id', id => qr/\d+/)->via('put')   ->to('notes#update')->name('notes_update');
